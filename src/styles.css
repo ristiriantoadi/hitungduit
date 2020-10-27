@@ -1,1 +1,191 @@
 /* You can add global styles to this file, and also import other style files */
+*{
+    padding: 0;
+    margin:0;
+}
+
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+nav{
+    height: 50px;
+    background-color: #463B7A;
+    /* padding: 0 20px; */
+    /* box-shadow: #0C0B0B; */
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.logo{
+    font-size: 24px;
+    color: white;
+}
+
+nav ul{
+    list-style-type: none;
+    display: flex;
+}
+
+nav li{
+    margin: 0 5px;
+    width: 93px;
+    color:white;
+    display: flex;
+    justify-content: center;
+    padding: 6px 0;
+    border-radius: 15px;
+    border: 1px solid #707070;
+    /* font-size: 21px; */
+}
+
+.login{
+    background-color: #1E0892;
+}
+
+.register{
+    background-color: #070127;
+}
+
+.nav-container{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.content-container{
+    width: 1300px;
+    height: 500px;
+    /* padding-top: 65px; */
+    margin: 65px auto;
+    display: flex;
+    /* background: yellow; */
+    overflow-y: scroll;
+}
+
+.neraca{
+    width: 50%;
+    height: 100%;
+}
+
+.pengeluaran{
+    border-left: 1.5px solid black;
+}
+.pemasukan{
+    border-right:1.5px solid black;
+}
+
+.pemasukan .title{
+    text-align: right;
+    color:#11A13C
+}
+
+.pengeluaran .title{
+    /* text-align: right; */
+    color:#D20606
+}
+
+.neraca .title{
+    margin: 0 50px;
+    font-size:32px;
+    font-weight: bold;
+}
+
+.input-box{
+    /* margin: 40px 0; */
+    margin:40px 26px;
+}
+
+.pemasukan .input-box{
+    text-align: right;
+}
+
+.pengeluaran .input-box{
+    /* text-align: right; */
+}
+
+.input-box input{
+    height: 35px;
+    box-sizing: border-box;
+    padding: 5px;
+}
+
+.input-box button{
+    width: 85px;
+    height: 35px;
+    border: 1px solid #707070;
+    color:white;
+}
+
+.pemasukan .input-box button{
+    background: #11A13C;
+}
+
+.pengeluaran .input-box button{
+    background: #D20606
+}
+
+.list .item{
+    /* list-style: none; */
+     display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list .item button{
+    margin-right: 27px;
+    width:57px;
+    background: #F55151;
+    border: 1px solid #707070;
+    color:white;
+    height:21px;
+    font-size: 10px;
+}
+
+.list .item .nama-pemasukan, .list .item .nominal-pemasukan{
+    color: #11A13C;
+    font-size:16px;
+}
+
+.nominal-pemasukan{
+    margin-right: 27px;
+}
+
+.list .item{
+    margin-bottom: 22px;;
+}
+
+.list{
+    /* height: 400px; */
+    /* height: 100%; */
+    /* overflow: hidden; */
+    /* background:skyblue; */
+}
+
+.item-pengeluaran{
+    display: flex;
+    flex-flow: row-reverse;
+    justify-content: space-between;
+    padding: 0 27px;
+    color: #D20606
+}
+
+.item-pengeluaran button{
+    width:57px;
+    margin-left: 27px;
+    background: #F55151;
+    border: 1px solid #707070;
+    color:white;
+    height:21px;
+    font-size: 10px;
+}
+
+.balance{
+    width: 1300px;
+    text-align: center;
+    margin: 20px auto;
+    font-size: 45px;
+    color:#333333;
+}

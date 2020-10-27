@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "hitungduit"
+    }
+  },
+  "defaultProject": "hitungduit",
+  "cli": {
+    "analytics": "904da457-4466-4564-b6f8-014f5bc39843"
+  }
 }
