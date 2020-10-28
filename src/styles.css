@@ -189,3 +189,118 @@ nav li{
     font-size: 45px;
     color:#333333;
 }
+
+.login{
+    background-color: #1E0892;
+}
+
+.register{
+    background-color: #070127;
+}
+
+.nav-container{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1300px;
+    margin: 0 auto;
+}
+
+a {
+    color: #0f548a;
+    text-decoration: none;
+    font-size: 13px;
+    cursor:pointer
+}
+
+a:hover{
+    color:#1891f0;
+}
+
+body{
+        /* padding:20px; */
+        background-color: #f0f4f7;
+        font-size:13px;
+        box-sizing: border-box;
+        
+    }
+
+.box{
+        padding: 12px 12px 4px 12px;
+        border: 1px solid #a3bac9;
+        border-radius:3px;
+        background:white;
+}
+
+.box.login{
+    width:450px;
+    margin: 0 auto;
+}
+
+.box.login .header{
+    text-align:center;
+}
+
+.header{
+        padding-top:4px;
+        padding-bottom:16px;
+        padding: 4px 4px 16px 4px;
+        border-bottom: 1px solid #dae2e8;
+    }
+.phui-header{
+        font-size:24px;
+        line-height: 24px;
+        color: #463B7A;
+}
+   
+.dashboard-panel{
+        padding:20px;
+}
+
+.input-item label{
+        margin-right:10px;
+        width:100px;
+        display: inline-block;
+        font-size:14px;
+        line-height: 1.5;
+}
+
+.input-item{
+        display: flex;
+        align-items: center;
+        margin-bottom:14px;
+}
+
+.button,button{
+        font-weight: bold;
+        color:#ffffff;
+        background: #463B7A;;
+        padding: 5px 3px !important;
+        font-size: 1rem;
+        text-shadow: none;
+        line-height: 1.2;
+        display: inline-block;
+        margin: 0 10px 0 0;
+        border-radius: 4px;
+        border: 3px solid transparent;
+        cursor: pointer;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-decoration: none !important;
+        text-align: center;
+    }
+    
+    #content{
+        /* padding-top:20px; */
+        display: flex;
+        height: 100vh;
+        align-items: center;
+    }
+
+    input[type="text"],input[type="password"],select{
+        padding:0.9em;
+        font-size:14px;
+        width:100%;
+        max-width: 425px;
+    }

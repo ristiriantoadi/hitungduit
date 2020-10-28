@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "hitungduit-5a4af": {
+      "hosting": {
+        "hitungduit": [
+          "hitungduit-5a4af"
+        ]
+      }
+    }
+  }
+}
