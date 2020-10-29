@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -12,7 +13,10 @@ export class NavbarComponent implements OnInit {
   user
   userDisplayName
   isLoggedIn
-  constructor(public  afAuth:  AngularFireAuth,public router:Router) { 
+  constructor(public  auth:AuthService,public router:Router,public afAuth:AngularFireAuth) {
+    // this.user = auth.user
+    // this.userDisplayName = auth.userDisplayName
+    // this.isLoggedIn = auth.isLoggedIn 
     this.afAuth.authState.subscribe(user => {
       if (user){
         this.user = user;
@@ -34,9 +38,6 @@ export class NavbarComponent implements OnInit {
   }
 
   async logout(){
-    await this.afAuth.signOut();
-    localStorage.removeItem('user');
-    console.log("logout")
-    this.router.navigate(['/'])
+    this.auth.logout()
   }
 }

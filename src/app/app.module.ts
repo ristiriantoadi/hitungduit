@@ -10,8 +10,10 @@ import { AngularFireModule } from '@angular/fire';
 import { environment } from 'src/environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { DashboardComponent } from './dashboard/dashboard.component';
-import { AngularFireAuth } from '@angular/fire/auth';
+// import { AngularFireAuth } from '@angular/fire/auth';
 import { NavbarComponent } from './navbar/navbar.component';
+import { AuthService } from './auth/auth.service';
+import { AuthGuard } from './auth.guard';
 
 @NgModule({
   declarations: [
@@ -30,7 +32,7 @@ import { NavbarComponent } from './navbar/navbar.component';
     AngularFireDatabaseModule,
     // AngularFireAuth
   ],
-  providers: [],
+  providers: [AuthService,AuthGuard],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
 import { FormControl, FormGroup } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../auth/auth.service';
 
 @Component({
   selector: 'app-register',
@@ -17,7 +18,7 @@ export class RegisterComponent implements OnInit {
     konfirmasiPassword: new FormControl()
   })
 
-  constructor(public  afAuth: AngularFireAuth, public router:Router) { }
+  constructor(public auth:AuthService, public router:Router) { }
 
   ngOnInit(): void {
   }
@@ -26,15 +27,16 @@ export class RegisterComponent implements OnInit {
     var username = this.registerForm.get('username').value
     var email = this.registerForm.get('email').value
     var password = this.registerForm.get('password').value
-    this.afAuth.createUserWithEmailAndPassword(email, password)
-      .then((cred)=>{
-        console.log(cred.user)
-        cred.user.updateProfile({
-          displayName:username
-        }).then(()=>{
-          this.router.navigate(['/dashboard'])
-        })
-      })
+    // this.afAuth.createUserWithEmailAndPassword(email, password)
+    //   .then((cred)=>{
+    //     console.log(cred.user)
+    //     cred.user.updateProfile({
+    //       displayName:username
+    //     }).then(()=>{
+    //       this.router.navigate(['/dashboard'])
+    //     })
+    //   })
+    this.auth.register(username,email,password)
   }
 
 }
