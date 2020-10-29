@@ -161,31 +161,32 @@
 
     </style>
 <div>
-    <nav>
+    <!-- <nav>
         <div class="nav-container">
             <h2 class="logo">HitungDuit</h2>
         </div>
-    </nav>
+    </nav> -->
+    <app-navbar></app-navbar>
     <div id="content">
         <div class="box login">
             <div class="header">
                 <h1><span class="phui-header">Login</span></h1>
             </div>
             <div class="dashboard-panel">
-                <!-- <form> -->
+                <form [formGroup]="loginForm">
                     <div class="input-item">
-                        <label name="username" id="username">Username</label>
-                        <input required placeholder="username ..." type="text" name="username" id="username">
+                        <label name="email" id="email">Email</label>
+                        <input formControlName="email" required placeholder="email ..." type="text" name="email" id="email">
                     </div>
                     <div class="input-item">
                         <label name="password" id="password">Password</label>
-                        <input required placeholder="password ..." type="password" name="password" id="password"s>
+                        <input formControlName="password" required placeholder="password ..." type="password" name="password" id="password"s>
                     </div>
                     <div class="input-item">
-                        <input class="button" type="submit" value="Login">
+                        <input class="button" (click)="login()" value="Login">
                         <span><a routerLink="/register">Register</a></span>
                     </div>
-                <!-- </form> -->
+                </form>
             </div>
         </div>
     </div>

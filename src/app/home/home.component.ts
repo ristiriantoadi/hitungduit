@@ -56,6 +56,8 @@ export class HomeComponent implements OnInit {
         return pengeluaran
       }
     })
+
+    this.setBalance()
   }
 
   setBalance(){

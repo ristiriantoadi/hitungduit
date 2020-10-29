@@ -11,6 +11,7 @@ import { environment } from 'src/environments/environment';
 import { AngularFireDatabaseModule } from '@angular/fire/database';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { AngularFireAuth } from '@angular/fire/auth';
     LoginComponent,
     RegisterComponent,
     DashboardComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,

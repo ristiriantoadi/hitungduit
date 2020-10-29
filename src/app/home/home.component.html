@@ -1,4 +1,4 @@
-<!-- <style>
+<style>
 
     *{
         padding: 0;
@@ -97,10 +97,11 @@
     .input-box{
         /* margin: 40px 0; */
         margin:40px 26px;
+        display: flex;;
     }
 
     .pemasukan .input-box{
-        text-align: right;
+        /* text-align: right; */
     }
 
     .pengeluaran .input-box{
@@ -191,9 +192,9 @@
         color:#333333;
     }
 
-</style> -->
+</style>
 
-<nav>
+<!-- <nav>
     <div class="nav-container">
         <h2 class="logo">HitungDuit</h2>
         <ul>
@@ -201,12 +202,13 @@
             <li class="register">Register</li>
         </ul>
     </div>
-</nav>
+</nav> -->
+<app-navbar></app-navbar>
 <div class="content-container">
     <div class="neraca pemasukan">
         <div class="title">Pemasukan</div>
-        <div class="input-box">
-            <form [formGroup]="inputPemasukan">
+        <div>
+            <form class="input-box" [formGroup]="inputPemasukan">
                 <!-- Name: <input formControlName="name"  placeholder="Enter Name"> -->
                 <!-- Age: <input formControlName="age"  placeholder="Enter Age"> -->
                 <!-- <button type="submit">Submit</button>  -->
@@ -311,8 +313,8 @@
         </div>
         <div class="neraca pengeluaran">
             <div class="title">Pengeluaran</div>
-            <div class="input-box">
-                <form [formGroup]="inputPengeluaran">
+            <div>
+                <form class="input-box" [formGroup]="inputPengeluaran">
                     <!-- Name: <input formControlName="name"  placeholder="Enter Name"> -->
                     <!-- Age: <input formControlName="age"  placeholder="Enter Age"> -->
                     <!-- <button type="submit">Submit</button>  -->

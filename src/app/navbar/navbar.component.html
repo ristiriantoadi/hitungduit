@@ -1,0 +1,33 @@
+<style>
+    .login a, .register a, .user li a{
+       text-decoration: none;
+       color: white; 
+    }
+
+    .user li{
+        border: none;
+    }
+
+    .user li a:hover{
+        text-decoration: underline;
+    }
+
+</style>
+<nav>
+    <div class="nav-container">
+        <h2 class="logo">HitungDuit</h2>
+        <div *ngIf="isLoggedIn;then thenBlock;else elseBlock"></div>
+        <ng-template #thenBlock>
+            <ul class="user">
+                <li>Halo, {{userDisplayName}}</li>
+                <li><a (click)="logout()">Logout</a></li>
+            </ul>
+        </ng-template>
+        <ng-template #elseBlock>
+            <ul>
+                <li class="login"><a routerLink="/login">Login</a></li>
+                <li class="register"><a routerLink="/register">Register</a></li>
+            </ul>
+        </ng-template>
+    </div>
+</nav>
