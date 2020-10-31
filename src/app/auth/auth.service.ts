@@ -35,7 +35,11 @@ export class AuthService {
   // }
 
   getIsLoggedIn(){
-    return this.isLoggedIn
+    if(this.user == null){
+      return true
+    }else{
+      return false;
+    }
   }
 
   register(username,email,password){

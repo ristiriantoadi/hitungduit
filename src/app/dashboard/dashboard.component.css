@@ -1,0 +1,75 @@
+.nav-container{
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.container{
+    padding-top:30px;
+    width: 1300px;
+    margin: 0 auto;
+}
+
+.page-title{
+    font-size:32px;
+    color:#333;
+}
+
+.page-top{
+    display: flex;
+}
+
+.page-top button{
+    margin-left: 20px;
+    width: 133px;
+    height: 41px;
+    text-align: center;
+    vertical-align: center;
+    color:white;
+    background:#11A13C;
+    border: 1px solid #707070;
+    font-size: 16px;;
+}
+
+.neraca-list{
+    padding-top:30px;
+    font-size:16px;
+    display: flex;
+    flex-direction: row;
+    margin-right:20px;
+    flex-wrap: wrap;
+}
+
+.neraca-list .title{
+    font-size: 24px;
+}
+
+.neraca-list .info{
+    padding-left:20px;
+}
+.neraca-list .info div{
+    padding: 4px 0;
+}
+
+.neraca-list .info span{
+    margin-right: 10px;
+}
+
+a{
+    text-decoration: none;
+    color: #2900FF 
+}
+
+.neraca-list .neraca-item{
+    width: 400px;
+    margin-right: 20px;
+    margin-bottom:30px;
+}
+
+.aksi a{
+    font-size:16px;
+    margin-right: 10px;
+}
