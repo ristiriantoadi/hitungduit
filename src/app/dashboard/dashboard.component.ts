@@ -28,4 +28,8 @@ export class DashboardComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  hapusNeraca(id){
+    this.data.hapusNeraca(id)
+  }
+
 }

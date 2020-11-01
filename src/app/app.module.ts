@@ -15,6 +15,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { AuthService } from './auth/auth.service';
 import { AuthGuard } from './auth.guard';
 import { NeracaBaruComponent } from './neraca-baru/neraca-baru.component';
+import { NeracaComponent } from './neraca/neraca.component';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { NeracaBaruComponent } from './neraca-baru/neraca-baru.component';
     DashboardComponent,
     NavbarComponent,
     NeracaBaruComponent,
+    NeracaComponent,
   ],
   imports: [
     BrowserModule,

@@ -13,25 +13,10 @@
                     <div>Pemilik: {{neraca.value.pemilik}}</div>
                     <div>Deskripsi: {{neraca.value.deskripsi}}</div>
                     <div class="aksi">
-                        <a href="#">Lihat Neraca</a>
-                        <a href="#">Hapus Neraca</a>
+                        <a [routerLink]="['/neraca',neraca.key]">Lihat Neraca</a>
+                        <a (click)="hapusNeraca(neraca.key)">Hapus Neraca</a>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- <div class="neraca-list">
-            <div class="neraca-item">
-                <div class="title">
-                    Neraca 1
-                </div>
-                <div class="info">
-                    <div>Pemilik:Bude</div>
-                    <div>Deskripsi: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eros arcu, condimentum ut tortor vel, vestibulum suscipit sapien. Maecenas in ex eleifend, pulvinar magna eget, viverra sem. Sed tincidunt, risus a eleifend viverra, risus turpis suscipit arcu, in ultricies leo lectus ultricies magna. Sed eu mauris in nisl aliquam faucibus. Ut pharetra maximus varius. Sed a turpis tincidunt ligula scelerisque vestibulum. Donec ligula mauris, aliquet ac odio vitae, aliquet fermentum eros. Nullam porta eleifend odio, facilisis iaculis purus consectetur at.</div>
-                    <div class="aksi">
-                        <a href="#">Lihat Neraca</a>
-                        <a href="#">Hapus Neraca</a>
-                    </div>
-                </div>
-            </div>
-        </div> -->
     </div>

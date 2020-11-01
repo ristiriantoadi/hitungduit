@@ -1,0 +1,259 @@
+<style>
+    .nav-container{
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 1300px;
+        margin: 0 auto;
+    }
+
+    .content-container{
+        width: 1300px;
+        height: 500px;
+        /* padding-top: 65px; */
+        margin: 0 auto;
+        display: flex;
+        /* background: yellow; */
+        overflow-y: scroll;
+    }
+
+    .neraca{
+        width: 50%;
+        height: 100%;
+    }
+
+    .pemasukan,.pengeluaran{
+        border: none;
+    }
+
+    .border.pengeluaran{
+        border-left: 1.5px solid black;
+    }
+    .border.pemasukan{
+        border-right:1.5px solid black;
+    }
+
+    .pemasukan .title{
+        text-align: right;
+        color:#11A13C
+    }
+
+    .pengeluaran .title{
+        /* text-align: right; */
+        color:#D20606
+    }
+
+    .neraca .title{
+        margin: 0 50px;
+        font-size:32px;
+        font-weight: bold;
+    }
+
+    .input-box{
+        /* margin: 40px 0; */
+        margin:40px 26px;
+        display: flex;
+    }
+
+    .pemasukan .input-box{
+        text-align: right;
+    }
+
+    .pengeluaran .input-box{
+        /* text-align: right; */
+    }
+
+    .input-box input{
+        height: 35px;
+        box-sizing: border-box;
+        padding: 5px;
+    }
+
+    .input-box button{
+        width: 85px;
+        height: 35px;
+        border: 1px solid #707070;
+        color:white;
+    }
+
+    .pemasukan .input-box button{
+        background: #11A13C;
+    }
+
+    .pengeluaran .input-box button{
+        background: #D20606
+    }
+
+    .list .item{
+        /* list-style: none; */
+         display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .list .item button{
+        margin-right: 27px;
+        width:57px;
+        background: #F55151;
+        border: 1px solid #707070;
+        color:white;
+        height:21px;
+        font-size: 10px;
+    }
+
+    .list .item .nama, .list .item .nominal{
+        /* color: #11A13C; */
+        font-size:16px;
+    }
+
+    .pemasukan {
+        color:#11A13C;
+    }
+
+    .pengeluaran{
+        color:#D20606;
+    }
+    
+
+    .nominal.pemasukan{
+        margin-right: 27px;
+    }
+
+    .list .item{
+        margin-bottom: 22px;;
+    }
+
+    .list{
+        /* height: 400px; */
+        /* height: 100%; */
+        /* overflow: hidden; */
+        /* background:skyblue; */
+    }
+
+    .item.pengeluaran{
+        display: flex;
+        flex-flow: row-reverse;
+        justify-content: space-between;
+        padding: 0 27px;
+        color: #D20606
+    }
+
+    .item.pengeluaran button{
+        width:57px;
+        margin-left: 27px;
+        background: #F55151;
+        border: 1px solid #707070;
+        color:white;
+        height:21px;
+        font-size: 10px;
+    }
+
+    .balance{
+        width: 1300px;
+        text-align: center;
+        margin: 20px auto;
+        font-size: 45px;
+        color:#333333;
+    }
+
+    .page-title{
+        font-size:32px;
+        color:#333;
+    }
+
+    .page-top{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .container{
+        padding-top:30px;
+        width: 1300px;
+        margin: 0 auto;
+    }
+
+    a{
+        text-decoration: none;
+        color: #2900FF 
+    }
+
+    .back a,.page-top a{
+        font-size: 16px;
+    }
+
+    .page-top a{
+        margin-right:10px;
+    }
+
+
+    .user{
+        color:#8e9091
+    }
+
+</style>
+<body>
+    <app-navbar></app-navbar>
+    <div class="container">
+        <div class="page-top"> 
+            <h2 class="page-title">Neraca 1</h2>
+            <div>
+                <a (click)="simpan()">Simpan</a>
+                <a href="#">Pengaturan</a>
+            </div>
+            <!-- <button>Buat Baru</button> -->
+        </div>
+        <div class="back"><a href="#">Kembali ke daftar neraca</a></div>
+    </div>
+    <div class="content-container">
+        <div class="neraca pemasukan border">
+            <div class="title">Pemasukan</div>
+            <div class="input-box">
+                <form class="input-box" [formGroup]="inputPemasukan">
+                    <input type="text" formControlName="sumber" placeholder="Sumber ...">
+                    <input type="number" formControlName="nominal" placeholder="Nominal ...">
+                    <button (click)="tambahPemasukan()">Tambah</button>
+                </form>
+            </div>
+            <div class="list">
+                <div class="item pemasukan" *ngFor="let pemasukan of pemasukans">
+                    <div class="nama pemasukan">
+                        <button (click)="hapus(pemasukan.sumber)">Hapus</button>
+                        <span>{{pemasukan.sumber}}</span>
+                    </div>
+                    <div class="user">
+                        {{pemasukan.user}}
+                    </div>
+                    <div class="nominal pemasukan">
+                        {{pemasukan.nominal}}
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="neraca pengeluaran border">
+            <div class="title">Pengeluaran</div>
+            <div class="input-box">
+                <form class="input-box" [formGroup]="inputPengeluaran">
+                    <input type="text" formControlName="sumber" placeholder="Keperluan ...">
+                    <input type="number" formControlName="nominal" placeholder="Nominal ...">
+                    <button (click)="tambahPengeluaran()">Tambah</button>
+                </form>
+            </div>
+            <div class="list">
+                    <div class="item pengeluaran" *ngFor="let pengeluaran of pengeluarans">
+                        <div class="nama pengeluaran">
+                            <span>{{pengeluaran.sumber}}</span>
+                            <button (click)="hapus(pengeluaran.sumber)">Hapus</button>
+                        </div>
+                        <div class="user">
+                            {{pengeluaran.user}}
+                        </div>
+                        <div class="nominal pengeluaran">
+                            {{pengeluaran.nominal}}
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+    <div class="balance">Balance: {{balance}}</div>
