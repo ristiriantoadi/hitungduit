@@ -10,6 +10,7 @@ import { AuthGuard } from './auth.guard';
 import { AngularFireAuthGuard,redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 import { NeracaBaruComponent } from './neraca-baru/neraca-baru.component';
 import { NeracaComponent } from './neraca/neraca.component';
+import { PengaturanNeracaComponent } from './pengaturan-neraca/pengaturan-neraca.component';
 
 const redirectUnauthorizedToLogin = () => redirectUnauthorizedTo(['login']);
 
@@ -19,7 +20,8 @@ const routes: Routes = [
   {path:'register',component:RegisterComponent},
   {path:'dashboard',component:DashboardComponent,canActivate:[AngularFireAuthGuard],data:{ authGuardPipe: redirectUnauthorizedToLogin }},
   {path:'neraca-baru',component:NeracaBaruComponent,canActivate:[AngularFireAuthGuard],data:{ authGuardPipe: redirectUnauthorizedToLogin }},
-  {path:'neraca/:id',component:NeracaComponent,canActivate:[AngularFireAuthGuard],data:{ authGuardPipe: redirectUnauthorizedToLogin }}
+  {path:'neraca/:id',component:NeracaComponent,canActivate:[AngularFireAuthGuard],data:{ authGuardPipe: redirectUnauthorizedToLogin }},
+  {path:'neraca/:id/pengaturan',component:PengaturanNeracaComponent,canActivate:[AngularFireAuthGuard],data:{ authGuardPipe: redirectUnauthorizedToLogin }}
   ];
   
 

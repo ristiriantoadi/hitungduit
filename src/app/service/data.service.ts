@@ -13,9 +13,23 @@ export class DataService {
     return this.db.list("/neraca").snapshotChanges()
   }
 
+  // getNeraca(username){
+  //   return this.db.list("/neraca",ref=>ref.orderByChild('pemilik').equalTo(username)).snapshotChanges()
+  // }
+
+  getNeraca(idNeraca){
+    return this.db.object("/neraca/"+idNeraca).snapshotChanges()
+  }
+
+  getNeracaByUsers(username){
+    return this.db.list("/users/"+username+"/neracas").snapshotChanges()
+  }
+
   simpanNeracaBaru(nama,pemilik,deskripsi){
     this.db.list("/neraca").push({"nama":nama,"pemilik":pemilik,"deskripsi":deskripsi})
-    .then(()=>{
+    .then((x)=>{
+      console.log("x: "+x.key)
+      this.db.list("/users/"+pemilik+"/neracas").push({"id_neraca":x.key})
       this.router.navigate(['/dashboard'])
     })   
   }
@@ -44,4 +58,21 @@ export class DataService {
   getPengeluaran(id){
     return this.db.list("/neraca/"+id+"/pengeluaran").snapshotChanges()
   }
+
+  tambahUser(username,idNeraca){
+    this.db.list("neraca/"+idNeraca+"/users").push({"username":username})
+    this.db.list("users/"+username+"/neracas").push({"id_neraca":idNeraca})
+  }
+
+  getUsers(id){
+    return this.db.list("neraca/"+id+"/users").snapshotChanges()
+  }
+
+  hapusUser(idUser,idNeraca){
+    this.db.object("neraca/"+idNeraca+"/users/"+idUser).remove()
+  }
+
+  // getNeraca(){
+
+  // }
 }

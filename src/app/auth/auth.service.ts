@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFireAuth } from '@angular/fire/auth';
+import { AngularFireDatabase } from '@angular/fire/database';
 import { Router } from '@angular/router';
 import { Observable } from 'rxjs';
 import { User } from './user';
@@ -12,7 +13,7 @@ export class AuthService {
   user
   userDisplayName
   isLoggedIn
-  constructor(public  afAuth:  AngularFireAuth,public router:Router) { 
+  constructor(public  afAuth:  AngularFireAuth,public router:Router,public db:AngularFireDatabase) { 
     this.afAuth.authState.subscribe(user => {
       if (user){
         this.user = user;
@@ -52,6 +53,7 @@ export class AuthService {
         cred.user.updateProfile({
           displayName:username
         }).then(()=>{
+          this.db.list("/users").push({"username":username})
           this.router.navigate(['/dashboard'])
         })
       })
